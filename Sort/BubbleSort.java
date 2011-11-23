@@ -4,19 +4,22 @@
  */
 public class BubbleSort 
 {
+	private void swap(int[] tab, int a, int b)
+	{
+		int temp = tab[a];
+		tab[a]=tab[b];
+		tab[b]=temp;
+	}
+	
 	/**
 	 * Sortowanie babelkowe - bez warunku wykonania zamiany - algorytm klasy O(N^2)
 	 */
-	public static void Sort(int[] TAB)
+	public static void Sort(int[] tab)
 	{
-		for(int i=0; i<TAB.length-1; i++)
-			for(int j=0; j<TAB.length-i-1; j++)
-				if(TAB[j+1] < TAB[j])
-				{
-					int temp = TAB[j+1];
-					TAB[j+1] = TAB[j];
-					TAB[j] = temp;
-				}
+		for(int i=0; i<tab.length-1; i++)
+			for(int j=0; j<tab.length-i-1; j++)
+				if(tab[j+1] < tab[j])
+					swap(tab,i,j)
 	}
 	
 	/**
